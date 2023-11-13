@@ -61,7 +61,9 @@ public class CameraPreviewPlugin extends Plugin {
                         FrameLayout.LayoutParams.WRAP_CONTENT,
                         FrameLayout.LayoutParams.WRAP_CONTENT
                 );
-                ((ViewGroup) bridge.getWebView().getParent()).addView(mCameraView,cameraPreviewParams);
+                // ViewGroup 변경
+                // ((ViewGroup) bridge.getWebView().getParent()).addView(mCameraView,cameraPreviewParams);
+                bridge.getWebView().addView(mCameraView,cameraPreviewParams);
                 bridge.getWebView().bringToFront();
                 call.resolve();
             }
